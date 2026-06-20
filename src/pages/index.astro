@@ -1,11 +1,16 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Loomine";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title}>
+  <main class="container">
+    <h1>Loomine</h1>
+
+    <p>
+      Loomineは2026年に発足した同人サークルです。代表者は洛瓶レネ（らくべ れね）。
+    </p>
+    <h2>お知らせ</h2>
+    <p>2026年6月20日: ホームページを開設。</p>
+  </main>
 </Layout>

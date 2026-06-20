@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -9,7 +9,26 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<div class="wrapper">
+			<aside class="sidebar">
+				<div class="logo">
+					Loomine
+				</div>
+				<nav class="menu-container">
+					<ul class="nav-links">
+						<li><a href="/homepage">トップページ</a></li>
+						<li><a href="/homepage/manozero">魔法少女ノ魔女裁判 零</li>
+						<li><a href="/homepage/mod">マイクラmod日本語化配布</a></li>
+						<li><a href="/homepage/licence">Loomineライセンス</a></li>
+					</ul>
+				</nav>
+			</aside>
+			<main class="main-content">
+			<article class="content-body">
+          		<slot />
+        	</article>
+		</main>
+		</div>
 	</body>
 </html>
 
@@ -20,4 +39,45 @@
 		width: 100%;
 		height: 100%;
 	}
+	p {
+    	margin-top: 0;
+  		line-height: 1.8;
+  		margin-bottom: 1rem;
+		}
+	 .wrapper {
+    display: flex; 
+    max-width: 1200px; 
+    margin: 0 auto;    
+    min-height: calc(100vh - 71px); 
+  }
+    .sidebar {
+    width: 250px;      
+    background-color: #ffffff;
+    border-right: 1px solid #d0d7de;
+    padding: 20px;
+    position: sticky;
+    top: 71px;
+    height: fit-content;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 8px;
+  }
+
+  .main-content {
+    flex: 1;           
+    padding: 40px;
+    background-color: #ffffff;
+  }
+  
+  h1 {
+    border-left: 5px solid #3eaf7c;
+    padding-left: 15px;
+    margin-bottom: 20px;
+  }
 </style>
